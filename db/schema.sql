@@ -1,3 +1,5 @@
 DROP DATABASE IF EXISTS dailyRhythm;
 
 CREATE DATABASE dailyRhythm;
+
+
