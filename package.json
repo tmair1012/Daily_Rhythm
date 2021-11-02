@@ -1,0 +1,27 @@
+{
+  "name": "daily_rhythm",
+  "version": "1.0.0",
+  "description": "This app is created to help you remind you with daily task or future appointments",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.3.1",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmair1012/Daily_Rhythm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmair1012/Daily_Rhythm/issues"
+  },
+  "homepage": "https://github.com/tmair1012/Daily_Rhythm#readme"
+}
