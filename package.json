@@ -1,0 +1,27 @@
+{
+  "name": "daily_rhythm",
+  "version": "1.0.0",
+  "description": "Hello",
+  "main": "server.js",
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmair1012/Daily_Rhythm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmair1012/Daily_Rhythm/issues"
+  },
+  "homepage": "https://github.com/tmair1012/Daily_Rhythm#readme"
+}
