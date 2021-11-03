@@ -9,7 +9,7 @@ task_name VARCHAR(255) NOT NULL,
 task_description VARCHAR(255) NOT NULL,
 taskTime INTEGER NOT NULL
 
-CREATE TABLE chores
+CREATE TABLE addTask
 ID INTEGER PRIMARY KEY AUTOINCREMENT,
-chore_name VARCHAR(255) NOT NULL,
-chore_description VARCHAR(255) NOT NULL,
+addTask_name VARCHAR(255) NOT NULL,
+addTask_description VARCHAR(255) NOT NULL,
