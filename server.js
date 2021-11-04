@@ -4,8 +4,7 @@ const sequelize = require('./config/connection');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
-const bodyParser = require('body-parser'); // middleware
-app.use(bodyParser.urlencoded({ extended: false }));
+
 
 
 const app = express();
@@ -26,12 +25,12 @@ sequelize.sync({ force: false }).then(() => {
 
 // create login and password
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/static/index.html');
+    res.render(__dirname + '/static/index.html');
   });
 
   // Route to Login Page
 app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/static/login.html');
+    res.render(__dirname + '/static/login.html');
   });
   app.post('/login', (req, res) => {
     // Insert Login Code Here
