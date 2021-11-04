@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, TIME } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Task extends Model {}
@@ -14,4 +14,11 @@ Task.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-})
+    task_description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    task_time: {
+        type: TIME
+    }
+});
