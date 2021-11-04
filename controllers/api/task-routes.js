@@ -14,6 +14,20 @@ router.get('/', (req, res) => {
     })
 }
 */
+//POST /api/users
+router.post('/', (req, res) => {
+  Task.create({
+    id: req.body.id,
+    task_name: req.body.task_name,
+    task_description: req.body.task_description
+  })
+    .then(dbTaskData => res.json(dbTaskData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post('/api/', (req, res) => {
     var newTask = {
         id: req.body.id,

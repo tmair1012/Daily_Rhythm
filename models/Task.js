@@ -18,8 +18,7 @@ Task.init({
         type: DataTypes.STRING,
         allowNull: false,
     },
-        sequelize,
-        timestamps: true,
+        sequelize: sequelize,
         modelName: 'Task'
 });
 
