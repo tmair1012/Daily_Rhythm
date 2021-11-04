@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Task } = require('../../models/Task')
+const { Task } = require('../../models/task')
 
 router.get('/', (req, res) => {
     Task.findAll()
@@ -14,10 +14,9 @@ router.get('/', (req, res) => {
     })
 }
 */
-//POST /api/users
+//POST /api/
 router.post('/', (req, res) => {
   Task.create({
-    id: req.body.id,
     task_name: req.body.task_name,
     task_description: req.body.task_description
   })
@@ -33,7 +32,6 @@ router.post('/api/', (req, res) => {
         id: req.body.id,
         task_name: req.body.task_name,
         task_description: req.body.task_description,
-        task_time: '',
     }
     Task.push(newTask)
 })

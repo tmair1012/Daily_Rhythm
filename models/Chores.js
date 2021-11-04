@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize/model');
+/*const { Model, DataTypes } = require('sequelize/model');
 const sequelize = require('../config/connection');
 
 
@@ -13,3 +13,4 @@ Chores.init({
     sequelize
 }
 )
+*/

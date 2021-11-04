@@ -1,6 +1,6 @@
 const express = require('express');
-const routes = require('./controllers/api/task-routes');
-const sequelize = require('./config/connection.js');
+const router = require('./controllers/api/task-routes');
+const sequelize = require('./config/connection');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({});
@@ -16,11 +16,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 // turn on routes
-app.use(routes);
+//app.use(require('./controllers/api/task-routes'))
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, function() { console.log('Now listening')});
 });
 
 // create login and password

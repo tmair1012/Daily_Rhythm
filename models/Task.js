@@ -3,23 +3,27 @@ const sequelize = require('../config/connection');
 
 class Task extends Model {}
 
-Task.init({
+Task.init(
+{
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        PrimaryKey: true,
-        autoIncrement: true,
+        primaryKey: true,
+        autoIncrement: true
     },
-    task_name: {
+    title: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: false
     },
-    task_description: {
+    description: {
         type: DataTypes.STRING,
-        allowNull: false,
-    },
-        sequelize: sequelize,
+        allowNull: false
+    }
+},
+    {
+        sequelize,
         modelName: 'Task'
-});
+    }
+    );
 
 module.exports = Task;
