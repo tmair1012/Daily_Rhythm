@@ -36,3 +36,21 @@ router.post('/api/', (req, res) => {
     Task.push(newTask)
 })
 
+router.delete('/:id', (req, res) =>{
+  Task.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(taskData => {
+    if (!taskData) {
+      res.status(404).json({ message: 'This task you are trying to delete does not exist' });
+      return;
+    }
+    res.json(taskData);
+  })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err)
+    });
+});
