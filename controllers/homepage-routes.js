@@ -2,6 +2,7 @@ const app = require('express').Router();
 
 // create login and password
 app.get('/', (req, res) => {
+    console.log("Test");
     res.render('homepage');
   });
 
