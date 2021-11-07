@@ -1,8 +1,11 @@
+//Dependencies
 const express = require('express');
-const routes = require('./controllers/');
+const exphbs = require('express-handlebars');
+
+const router = require('./controllers/api/task-routes');
 const sequelize = require('./config/connection');
 const path = require('path');
-const exphbs = require('express-handlebars');
+
 const hbs = exphbs.create({});
 
 
@@ -12,28 +15,26 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'view')));
-
-// Set handlebars as the default engine.
-app.engine('handlebars', exphbs({ defaultLayout: 'homepage' }));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.engine('handlebars', hbs.engine);
+//boiler plate at all times
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
 app.set('view engine', 'handlebars');
 
 // turn on routes
-app.use(routes);
+//app.use(require('./controllers/api/task-routes'))
 
 // turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+
 
 // create login and password
 app.get('/', (req, res) => {
-    res.render('login');
+    res.render('homepage');
   });
 
   // Route to Login Page
 app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/static/login.html');
+    res.render('login');
   });
   app.post('/login', (req, res) => {
     // Insert Login Code Here
@@ -41,3 +42,6 @@ app.get('/login', (req, res) => {
     let password = req.body.password;
     res.send(`Username: ${username} Password: ${password}`);
   });
+
+  
+    app.listen(3001);
