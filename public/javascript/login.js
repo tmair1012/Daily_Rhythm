@@ -23,6 +23,7 @@ async function loginFormHandler(event) {
   }
   
   async function signupFormHandler(event) {
+    console.log("signupFormHandler is called");
     event.preventDefault();
   
     const username = document.querySelector('#username-signup').value.trim();
@@ -48,6 +49,6 @@ async function loginFormHandler(event) {
     }
   }
   
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+  document.querySelector('login').addEventListener('login', loginFormHandler);
   
-  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+  document.querySelector('signup').addEventListener('submit', signupFormHandler);
