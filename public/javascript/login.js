@@ -1,8 +1,8 @@
 async function loginFormHandler(event) {
     event.preventDefault();
   
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+    const email = document.querySelector('.username').value.trim();
+    const password = document.querySelector('.password').value.trim();
   
     if (email && password) {
       const response = await fetch('/api/users/login', {
@@ -15,40 +15,13 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/taskView/');
       } else {
         alert(response.statusText);
       }
     }
   }
   // eventually sign up
-  async function signupFormHandler(event) {
-    console.log("signupFormHandler is called");
-    event.preventDefault();
   
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
+  document.querySelector('.submitBtn').addEventListener('login', loginFormHandler);
   
-    if (username && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'post',
-        body: JSON.stringify({
-          username,
-          email,
-          password
-        }),
-        headers: { 'Content-Type': 'application/json' }
-      });
-  
-      if (response.ok) {
-        document.location.replace('/dashboard/');
-      } else {
-        alert(response.statusText);
-      }
-    }
-  }
-  
-  document.querySelector('login').addEventListener('login', loginFormHandler);
-  
-  document.querySelector('signup').addEventListener('submit', signupFormHandler);
