@@ -2,13 +2,12 @@ const app = require('express').Router();
 
 // create login and password
 app.get('/', (req, res) => {
-    console.log("homepage-routes Test");
-    res.render('homepage'  );
+    console.log("login-routes Test");
+    res.render('login');
   });
 
   // Route to Login Page
 app.get('/login', (req, res) => {
-    console.log("login get called");
     res.render('login');
   });
 app.post('/login', (req, res) => {
