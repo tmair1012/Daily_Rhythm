@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const { Task } = require("../../models/task");
 
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
   Task.findAll().then((taskData) => res.json(taskData));
   console.log(taskData);
 });
 
 //get single task by id
-router.get("/:id", (req, res) => {
+router.get('/:id', (req, res) => {
   Task.findOne({
     where: {
       id: req.params.id,
