@@ -9,8 +9,6 @@ const path = require('path');
 const hbs = exphbs.create({});
 
 
-const sequelize = require('./config/connection');
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 const routes = require('./controllers');
