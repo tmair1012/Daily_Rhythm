@@ -1,42 +1,47 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daily Rhythm</title>
-    {{!-- <link rel="stylesheet" href="./public/styles/stylesheet.css"/> --}}
-  </head>
-  <body>
-    <nav>
-      <div class="loginbox">
-        <h1>Welcome to Daily Rhythm</h1>
-        <form>
-         <form class = 'login'>
-    <div>
-        <label for='email'>email:</label>
-        <input type='text' id = 'email'/>
-    </div>
-    <div>
-        <label for='passwordEnter'>password:</label>
-        <input type='password' id='passwordEnter'/>
-    </div>
-    <div>
-        <button type='submit'>login</button>
-    </div>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Rhythm</title>
+{{#each css}}
+<link rel="stylesheet" href="../public/styles/{{this}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <h1 class="page-header">Welcome to Daily Rhythm</h1>
+</header>
+<nav>
+<div class="loginbox">
+<form>
+<input type="text" name="username" placeholder="Username" class="usernameBar">
+<input type="password" name="password" placeholder="Password" class="passwordBar">
+<br>
+<input class="submitBtn" type="Submit" name="" value="Login">
+<br>
+<a href="#">Forgot Password?</a>
+<br>
+<a href="#">Sign Up</a>
 </form>
-    <form class='signup'>
-        <div>
-            <label for='emailSignup'>Email:</label>
-            <input type='text' id='emailSignup' />
-        </div>
-        <div>
-            <label for='passwordSignup'>Password:</label>
-            <input type='text' id='passwordSignup' />
-        </div>
-        <button type='submit'>submit</button>
-    </form>
-        </form>
-      </div>
-    </nav>
-  </body>
+</div>
+</nav>
+
+<footer>
+    <div class="footer">
+    <div class="links">
+    <a href="#">About</a>
+    <a href="#">Career</a>   
+    <a href="#">Privacy</a>   
+    <a href="#">Term</a> 
+    <a href="#">Help</a>      
+    </div>
+        <div class="container">Copyright &copy; 2021 Daily Rhythm</div>
+                
+    </div>
+</footer>
+</body>
 </html>
+
