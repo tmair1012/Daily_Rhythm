@@ -21,7 +21,7 @@ async function loginFormHandler(event) {
       }
     }
   }
-  
+  // eventually sign up
   async function signupFormHandler(event) {
     console.log("signupFormHandler is called");
     event.preventDefault();

@@ -2,12 +2,11 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
 
-const router = require('./controllers/api/task-routes');
 const sequelize = require('./config/connection');
 const path = require('path');
 
 const hbs = exphbs.create({});
-
+require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,16 +27,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', hbs.engine);
-//boiler plate at all times
-app.engine('handlebars', exphbs({ defaultLayout: 'main'}))
-app.set('view engine', 'handlebars');
-
-// turn on routes
-//app.use(require('./controllers/api/task-routes'))
-
-// turn on connection to db and server
+app.use(express.static('public'));
 
 
 // create login and password
@@ -56,5 +46,7 @@ app.get('/login', (req, res) => {
     res.send(`Username: ${username} Password: ${password}`);
   });
 
-  
-    app.listen(3001);
+// turn on connection to db and server - connecting to sequelize server
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, function() { console.log('Now listening on Port ' + PORT)});
+});
