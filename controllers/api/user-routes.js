@@ -1,9 +1,9 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 
 const { User } = require('../../models/Rhythm-user');
 
 //Get All users
-
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
@@ -52,6 +52,7 @@ router.post('/', (req, res) => {
     });
 });
 
+//Create a new user
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -72,6 +73,7 @@ router.post('/login', (req, res) => {
 
         req.session.save(() => {
             req.session.user_id = dbUser.id
+            req.session.username = dbUser.username
             req.session.loggedIn = true;
 
             res.json({ user: dbUser, message: 'You are logged in' })
@@ -79,6 +81,27 @@ router.post('/login', (req, res) => {
     })
 })
 
+//Update User
+router.put('/:id', (req, res) => {
+    User.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbUser => {
+        if (!dbUser) {
+            res.status(404).json ({ message: 'No user found'});
+            return;
+        }
+        res.json(dbUser);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
+})
+
+//Logout Route
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
