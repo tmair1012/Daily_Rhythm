@@ -20,4 +20,4 @@ async function newtask(event) {
 }
 
 document.querySelector('#addTaskBtn')
-.addEventListener('click', newtask)
+  .addEventListener('click', newtask);
