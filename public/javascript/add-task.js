@@ -1,10 +1,11 @@
 async function newtask(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="taskTitle"').value;
-    const description = document.querySelector('input[name="taskDescription"]').value
-
-    const response = await fetch(`/api/task-routes`, {
+    const title = document.querySelector('#taskName').value.trim();
+    const description = document.querySelector('#TaskDescription').value.trim();
+    console.log('hi');
+    console.log(title, description);
+    const response = await fetch(`/api/tasks/add`, {
         method: 'POST',
         body: JSON.stringify(
             {
@@ -17,3 +18,6 @@ async function newtask(event) {
         document.location.replace('/taskView/')
     }
 }
+
+document.querySelector('#addTaskBtn')
+  .addEventListener('click', newtask);
