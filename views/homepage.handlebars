@@ -1,59 +1,49 @@
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Rhythm</title>
-
-<!--<link rel="stylesheet" href="../public/styles/{{this}}">-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap" rel="stylesheet">
-
-</head>
-<body>
-    <header>
-    <h1 class="page-header">Welcome to Daily Rhythm</h1>
-</header>
-
 <!-- Log In Section -->
 <nav>
-<div class="loginbox">
-<form>
-<input type="text" name="username" placeholder="Username" class="username">
-<input type="password" name="password" placeholder="Password" class="password">
-<br>
-<input class="submitBtn" type="Submit" name="login" value="Login">
-<br>
-<a href="#">Forgot Password?</a>
-<br>
-<a href="/signup">Sign Up</a>
-</form>
-</div>
+  <div class="loginbox">
+    <form>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        class="username"
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="password"
+      />
+      <br />
+      <input class="submitBtn" type="Submit" name="login" value="Login" />
+      <br />
+      <a href="#">Forgot Password?</a>
+      <br />
+      <a href="/signup">Sign Up</a>
+    </form>
+  </div>
 </nav>
 <!-- Sign up Section -->
 <form class="signupbtn">
+  <div>
+    <h1>Sign Up</h1>
+    <label for="username-signup"></label>
+    <input type="text" id="username-signup" placeholder="Username" />
+  </div>
+  <div>
+    <label for="email-signup"></label>
+    <input type="text" id="email-signup" placeholder="E-mail" />
+  </div>
+  <div>
+    <label for="password-signup"></label>
+    <input type="password" id="password-signup" placeholder="Create Password" />
+  </div>
+  <div>
     <div>
-        <h1>Sign Up</h1>
-        <label for="username-signup"></label>
-        <input type="text" id="username-signup" placeholder="Username" />
-      </div>
-      <div>
-        <label for="email-signup"></label>
-        <input type="text" id="email-signup" placeholder="E-mail" />
-      </div>
-      <div>
-        <label for="password-signup"></label>
-        <input type="password" id="password-signup" placeholder="Create Password" />
-      </div>
-      <div>
-          <div>
-              
-          </div>
-        <button type="submit" id="signUpbtn">Signup</button>
-      </div>
-</form>
-</body>
-</html>
 
-<script src="/public/javascript/login.js"></script>
+    </div>
+    <button type="submit" id="signUpbtn">Signup</button>
+  </div>
+</form>
+
+<script src="/javascript/login.js"></script>
