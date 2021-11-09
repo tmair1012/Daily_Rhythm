@@ -10,6 +10,10 @@ async function newtask(event) {
             {
             title,
             description,
-        })
-    })
+        }),
+        headers: { 'Content-Type': 'application/json'}
+    });
+    if (response.ok) {
+        document.location.replace('/taskView/')
+    }
 }
