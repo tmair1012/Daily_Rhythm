@@ -10,6 +10,9 @@ router.get('/signup', (req, res) => {
   res.render('signupform');
 })
 
+router.get('/taskView', (req, res) => {
+  res.render('taskView');
+})
 
 
 module.exports = router;

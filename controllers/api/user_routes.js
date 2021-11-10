@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-
-const { User } = require('../../models/Rhythm-user');
+const session = require('express-session');
+const { User } = require('../../models');
 
 //Get All users
 router.get('/', (req, res) => {
@@ -32,19 +32,22 @@ router.get('/:id', (req, res) => {
 
 
 //Create a User
-router.post('/', (req, res) => {
+router.post('/signup', (req, res) => {
+    console.log("USER",req.body)
     User.create({
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password
     })
     .then(dbUser => {
-        req.session.save(() => {
-            req.session.user_id = dbUser.id,
-            req.session.username = dbUser.username,
-            req.session.loggedIn = true;
-
-            res.json(dbUser);
-        });
+        console.log("Signup",dbUser);
+        // req.session.save(() => {
+        //     req.session.id = dbUser.id,
+        //     req.session.username = dbUser.username,
+        //     req.session.loggedIn = true;
+            
+        //});
+        res.json(dbUser);
     })
     .catch(err => {
         console.log(err);
@@ -54,32 +57,34 @@ router.post('/', (req, res) => {
 
 //Create a new user
 router.post('/login', (req, res) => {
+    console.log(req.body);
     User.findOne({
         where: {
             email: req.body.email
         }
     }).then(dbUser => {
+        console.log(dbUser);
         if(!dbUser) {
             res.status(400).json({ message: 'No user with that email exists'});
             return;
         }
 
-        const okPass = dbUser.checkPassword(req.body.password);
+        // const okPass = dbUser.checkPassword(req.body.password);
 
-        if(!okPass) {
-            res.status(400).json({ message: 'incorrect Password!' })
-            return;
-        }
+        // if(!okPass) {
+        //     res.status(400).json({ message: 'incorrect Password!' })
+        //     return;
+        // }
 
-        req.session.save(() => {
-            req.session.user_id = dbUser.id
-            req.session.username = dbUser.username
-            req.session.loggedIn = true;
+        // req.session.save(() => {
+        //     req.session.user_id = dbUser.id
+        //     req.session.username = dbUser.username
+        //     req.session.loggedIn = true;
 
             res.json({ user: dbUser, message: 'You are logged in' })
         })
     })
-})
+
 
 //Update User
 router.put('/:id', (req, res) => {
