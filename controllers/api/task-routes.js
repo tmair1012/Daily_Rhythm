@@ -29,10 +29,10 @@ router.get('/:id', (req, res) => {
 });
 
 //POST /api/
-router.post("/", (req, res) => {
+router.post("/add", (req, res) => {
   Task.create({
-    task_name: req.body.task_name,
-    task_description: req.body.task_description,
+    title: req.body.title,
+    description: req.body.description,
   })
     .then((taskData) => res.json(taskData))
     .catch((err) => {
@@ -41,11 +41,11 @@ router.post("/", (req, res) => {
     });
 });
 
-router.post('/api/', (req, res) => {
+router.post('/add', (req, res) => {
     var newTask = {
         id: req.body.id,
-        task_name: req.body.task_name,
-        task_description: req.body.task_description,
+        title: req.body.title,
+        description: req.body.description,
     }
     Task.push(newTask)
 })

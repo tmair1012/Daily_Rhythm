@@ -30,7 +30,7 @@ header {
     background:whitesmoke;
     color: black;
     top: 30%;
-    left: 43%;
+    right: 60%;
     position: absolute;
     box-sizing: border-box;
     text-align: center;
@@ -84,4 +84,58 @@ border: 1px solid;
     color: black;
     font-weight: bold;
     text-decoration: none;
+}
+
+.signupbtn {
+    width: 320px;
+    height: 340px;
+    background:whitesmoke;
+    color: black;
+    top: 30%;
+    left: 50%;
+    position: absolute;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: 'Cabin', sans-serif;
+}
+
+#username-signup {
+    width: 250px;
+    font-size: 17px;
+    border-radius: 3px;
+    height: 30px;
+    margin: 20px;
+    border: 1px solid;
+    font-family: 'Cabin', sans-serif;
+}
+
+#email-signup {
+    width: 250px;
+    font-size: 17px;
+    border-radius: 3px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid;
+}
+
+#password-signup {
+    width: 250px;
+    font-size: 17px;
+    border-radius: 3px;
+    height: 30px;
+    margin: 20px;
+    border: 1px solid;
+}
+
+#signUpbtn {
+    background-color: #1877f2;
+    margin: 0;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 250px;  
 }
