@@ -16,9 +16,13 @@ async function newtask(event) {
         headers: { 'Content-Type': 'application/json'}
     });
     if (response.ok) {
-        document.location.replace('/taskView/')
+        document.location.replace('/taskView')
+
+        document.getElementsByClassName("dashboardSection");
     }
 }
+
+
 
 document.querySelector('#addTaskBtn')
   .addEventListener('click', newtask);
