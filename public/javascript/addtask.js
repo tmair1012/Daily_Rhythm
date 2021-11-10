@@ -3,9 +3,12 @@ async function newtask(event) {
 
     const title = document.querySelector('#taskName').value.trim();
     const description = document.querySelector('#TaskDescription').value.trim();
-    console.log('hi');
-    console.log(title, description);
-    const response = await fetch(`/api/tasks/add`, {
+    const phoneNumber = document.querySelector('#PhoneNumber').value.trim();
+    const time = document.querySelector('#takeTime').value.trim();
+
+
+    console.log(title, description, phoneNumber, time);
+    const response = await fetch(`/`, {
         method: 'POST',
         body: JSON.stringify(
             {
@@ -15,9 +18,13 @@ async function newtask(event) {
         headers: { 'Content-Type': 'application/json'}
     });
     if (response.ok) {
-        document.location.replace('/taskView/')
+        document.location.replace('/taskView')
+
+        document.getElementsByClassName("dashboardSection");
     }
 }
+
+
 
 document.querySelector('#addTaskBtn')
   .addEventListener('click', newtask);
