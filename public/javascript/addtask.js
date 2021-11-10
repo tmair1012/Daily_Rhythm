@@ -3,17 +3,15 @@ async function newtask(event) {
 
     const title = document.querySelector('#taskName').value.trim();
     const description = document.querySelector('#TaskDescription').value.trim();
-    const phoneNumber = document.querySelector('#PhoneNumber').value.trim();
-    const time = document.querySelector('#takeTime').value.trim();
-
-
-    console.log(title, description, phoneNumber, time);
-    const response = await fetch(`/`, {
+    console.log('hi');
+    console.log(title, description);
+    const response = await fetch(`/api/tasks/`, {
         method: 'POST',
         body: JSON.stringify(
             {
             title,
             description,
+            
         }),
         headers: { 'Content-Type': 'application/json'}
     });

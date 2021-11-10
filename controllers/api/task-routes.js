@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Task } = require("../../models/task");
+const { Task } = require("../../models/");
 
 router.get('/', (req, res) => {
   Task.findAll().then((taskData) => res.json(taskData));
@@ -29,11 +29,8 @@ router.get('/:id', (req, res) => {
 });
 
 //POST /api/
-router.post("/add", (req, res) => {
-  Task.create({
-    title: req.body.title,
-    description: req.body.description,
-  })
+router.post("/", (req, res) => {
+  Task.create(req.body)
     .then((taskData) => res.json(taskData))
     .catch((err) => {
       console.log(err);
@@ -41,14 +38,14 @@ router.post("/add", (req, res) => {
     });
 });
 
-router.post('/add', (req, res) => {
-    var newTask = {
-        id: req.body.id,
-        title: req.body.title,
-        description: req.body.description,
-    }
-    Task.push(newTask)
-})
+// router.post('/add', (req, res) => {
+//     var newTask = {
+//         id: req.body.id,
+//         title: req.body.title,
+//         description: req.body.description,
+//     }
+//     Task.push(newTask)
+// })
 
 router.delete('/:id', (req, res) =>{
   Task.destroy({
