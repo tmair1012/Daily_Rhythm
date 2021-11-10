@@ -11,7 +11,7 @@ Task.findAll()
     });
 });
 
-router.post('/dashboard', (req, res) => {
+router.post('/', (req, res) => {
     if (req.session) {
         Task.create({
             task_text: req.body.task_text,

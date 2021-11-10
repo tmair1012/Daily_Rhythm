@@ -8,6 +8,7 @@ const fs = require('fs');
 
 const hbs = exphbs.create({});
 
+require('dotenv').config();
 
 
 
