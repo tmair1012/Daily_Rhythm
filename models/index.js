@@ -1,16 +1,15 @@
 const Task = require('./Task');
-const User = require('./Rhythm-user');
+const User = require('./User');
 
 
 // create associations
 User.hasMany(Task, {
-  foreignKey: 'user_id'
-});
+  foreignKey: {allowNull: true}, onDelete: 'CASCADE'});
+;
 
 Task.belongsTo(User, {
-  foreignKey: 'user_id',
-  onDelete: 'SET NULL'
-});
+  foreignKey: {allowNull: true}, onDelete: 'CASCADE'});
+
 
 /*User.belongsToMany(Task, {
   through: Vote,

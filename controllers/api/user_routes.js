@@ -46,7 +46,7 @@ router.post('/signup', (req, res) => {
         //     req.session.username = dbUser.username,
         //     req.session.loggedIn = true;
             
-        // });
+        //});
         res.json(dbUser);
     })
     .catch(err => {
