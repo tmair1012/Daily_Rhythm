@@ -4,6 +4,8 @@ const { Task } = require("../../models/");
 router.get('/', (req, res) => {
   Task.findAll().then((taskData) => res.json(taskData));
   console.log(taskData);
+  const task = taskData
+  res.render('taskView', { task })
 });
 
 //get single task by id
