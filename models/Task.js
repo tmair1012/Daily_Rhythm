@@ -19,6 +19,10 @@ Task.init(
         type: DataTypes.STRING,
         allowNull: true
     },
+    time : {
+        type: DataTypes.STRING,
+        allowNull: true
+    }
 },
     {
         sequelize,
