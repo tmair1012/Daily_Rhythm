@@ -22,14 +22,17 @@
 
 
 <div class="dashboardSection">
+    {{#if task.length}}
     <h2>Your Tasks:</h2>
 {{#each task}}
-<h2>{{title}}</h2>
-<p>{{description}}</p>
-</div>
-{{else}}
-<p>No Tasks Yet!</p>
+<h2>Title{{dataValues.title}}</h2>
+<p>Description{{dataValues.description}}</p>
 {{/each}}
+{{/if}}
+{{#else}}
+<h2>No POsts</h2>
+{{/else}}
+</div>
 
 
 <script src="/javascript/addtask.js"></script>

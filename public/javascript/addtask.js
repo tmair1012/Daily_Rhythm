@@ -17,11 +17,13 @@ async function newtask(event) {
         }),
         headers: { 'Content-Type': 'application/json'}
     });
-    if (response.ok) {
-        document.location.replace('/taskView')
-
-        document.getElementsByClassName("dashboardSection");
-    }
+    console.log(response);
+    //if (response.ok) {
+        document.location.replace('/dashboard')
+   // }
+    // else{
+    //     console.log('no work');
+    // }
 }
 
 
