@@ -8,12 +8,13 @@ async function newtask(event) {
 
 
     console.log(title, description, phoneNumber, time);
-    const response = await fetch(`/`, {
+    const response = await fetch(`/api/tasks/`, {
         method: 'POST',
         body: JSON.stringify(
             {
             title,
             description,
+            time,
         }),
         headers: { 'Content-Type': 'application/json'}
     });

@@ -21,6 +21,15 @@
 </form>
 <div class="dashboardSection">
 <h2>Tasks</h2>
+<div class="dashboardSection">
+    <h2>Your Tasks:</h2>
+{{#each task}}
+<h2>{{title}}</h2>
+<p>{{description}}</p>
+</div>
+{{else}}
+<p>No Tasks Yet!</p>
+{{/each}}
 </div>
 
 <script src="/javascript/addtask.js"></script>
