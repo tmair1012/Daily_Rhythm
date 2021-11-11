@@ -5,7 +5,7 @@ async function newtask(event) {
     const description = document.querySelector('#TaskDescription').value.trim();
     const time = document.querySelector('#takeTime').value.trim();
     console.log('hi');
-    console.log(title, description);
+    console.log(title, description, time);
     const response = await fetch(`/api/tasks/`, {
         method: 'POST',
         body: JSON.stringify(
