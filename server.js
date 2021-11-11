@@ -4,7 +4,6 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const sequelize = require('./config/connection');
 const path = require('path');
-const fs = require('fs');
 
 const hbs = exphbs.create({});
 
