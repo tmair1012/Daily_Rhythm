@@ -17,7 +17,11 @@ Task.init(
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
+    },
+    time : {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 },
     {
