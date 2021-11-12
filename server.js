@@ -7,6 +7,7 @@ const path = require('path');
 
 const hbs = exphbs.create({});
 
+require('dotenv').config();
 
 
 
