@@ -25,8 +25,9 @@
     {{#if task.length}}
     <h2>Your Tasks:</h2>
 {{#each task}}
-<h2>Title{{dataValues.title}}</h2>
-<p>Description{{dataValues.description}}</p>
+<h2>{{dataValues.title}}</h2>
+<p>{{dataValues.description}}</p>
+<p>{{dataValues.time}}</p>
 {{/each}}
 {{/if}}
 {{#else}}
