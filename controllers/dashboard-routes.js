@@ -12,4 +12,14 @@ router.get('/', (req, res) => {
       res.render('taskView', { task: taskData})
   });
 })
+
+router.post('/', (req, res) => {
+    if (req.session) {
+        Task.create(req.body)
+        .then(dbTask => res.json(dbTask))
+        .catch(err => {
+            console.error(err);res.status(400).json(err);
+        });
+    }
+})
 module.exports = router;

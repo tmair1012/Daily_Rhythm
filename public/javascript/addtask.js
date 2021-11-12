@@ -6,7 +6,7 @@ async function newtask(event) {
     const time = document.querySelector('#takeTime').value.trim();
     console.log('hi');
     console.log(title, description, time);
-    const response = await fetch(`/api/tasks/`, {
+    const response = await fetch(`/api/tasks/add`, {
         method: 'POST',
         body: JSON.stringify(
             {
@@ -20,10 +20,8 @@ async function newtask(event) {
     console.log(response);
     //if (response.ok) {
         document.location.replace('/dashboard')
-   // }
-    // else{
-    //     console.log('no work');
-    // }
+   const taskBoard = document.getElementsByClassName("dashboardSection");
+   taskBoard.textContent = await Task.findAll();
 }
 
 
