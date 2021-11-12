@@ -13,7 +13,11 @@ router.get('/', (req, res) => {
   });
 })
 
-router.post('/', (req, res) => {
+router.get('/tasks', (req, res) => {
+    res.render('taskView');
+})
+
+router.post('/tasks/create', (req, res) => {
     if (req.session) {
         Task.create(req.body)
         .then(dbTask => res.json(dbTask))

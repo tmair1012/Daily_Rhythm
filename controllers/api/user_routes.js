@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 });
 
 //Gets a single User
-router.get('/:id', (req, res) => {
+router.get('/', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
