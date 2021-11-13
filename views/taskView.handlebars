@@ -16,7 +16,7 @@
         <option value="work">Work</option>
         <option value="activities">Activities</option>
       </select>
-     <button type="submit" id="addTaskBtn">Submit</button>
+     <button type="button" id="addTaskBtn">Submit</button>
     </div>
 </form>
 
@@ -28,10 +28,11 @@
 <h2>{{dataValues.title}}</h2>
 <p>{{dataValues.description}}</p>
 <p>{{dataValues.time}}</p>
+    <button type="submit" id='#delete-btn'>Delete</button>
 {{/each}}
 {{/if}}
 {{#else}}
-<h2>No POsts</h2>
+<h2>No Posts</h2>
 {{/else}}
 </div>
 

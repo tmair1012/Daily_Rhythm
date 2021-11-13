@@ -15,7 +15,7 @@
       });
   
       if (response.ok) {
-        document.location.replace('/taskView');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
