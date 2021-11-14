@@ -1,70 +1,47 @@
-<header>
-        <h1 class="page-header">Daily Rhythm</h1>
-    </header>
-    <form>
-        <div class="taskSection">
-    <h2>Enter Task</h2>
-    <input type="text" name="title" placeholder="Enter Task Name" id="taskName">
-    <p>Enter Description of Task</p>
-    <input type="text" name="description" id="TaskDescription" placeholder="Enter Task Description">
-    <p>Enter Phone Number</p>
-    <input type="text" name="number" id="PhoneNumber" placeholder="Enter PhoneNumber">
-    <p>Enter Time</p><input type="text" name="time" id="takeTime" placeholder="HH:MM:SS">
-    <p>Task Category</p>
-    <select name="takeName" id="tasklist">
-        <option value="personal">Personal</option>
-        <option value="work">Work</option>
-        <option value="activities">Activities</option>
-      </select>
-     <button type="button" id="addTaskBtn">Submit</button>
+<div class="d-flex flex-row">
+    <div class= "d-flex flex-column">
+        <div class="classWithPad">
+            <h2>Enter Task</h2>
+            <input type="text" name="title" placeholder="Enter Task Name" id="taskName">
+            <p>Enter Description of Task</p>
+            <input type="text" name="description" id="TaskDescription" placeholder="Enter Task Description">
+            <p>Enter Phone Number</p>
+            <input type="text" name="number" id="PhoneNumber" placeholder="Enter PhoneNumber">
+            <p>Enter Time</p><input type="text" name="time" id="takeTime" placeholder="HH:MM:SS">
+            <p>Task Category</p>
+                <select name="takeName" id="tasklist">
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="activities">Activities</option>
+                </select>
+            <button type="button" id="addTaskBtn">Submit</button>
+        </div>
     </div>
-</form>
 
-
-<div class="dashboardSection">
-    {{#if task.length}}
-    <h2>Your Tasks:</h2>
-{{#each task}}
-{{!-- <h2>{{dataValues.title}}</h2>
-<p>{{dataValues.description}}</p>
-<p>{{dataValues.time}}</p>
-    <button type="submit" id='#delete-btn'>Delete</button> --}}
-    <div class="card mt-3">
-      
-      <div class="card-body">
-        <h5 class="card-title">{{dataValues.title}}</h5>
-        <p class="card-text">{{dataValues.description}}</p>
-        <p class="card-text">{{dataValues.time}}</p>
+    <div class="d-flex flex-wrap">
+         
+        {{#if task.length}}
+        {{#each task}}
+        <div class="card mt-3">
+        <div class="classWithPad">
+        <div class="card-body">
+            <h5 class="card-title">{{dataValues.title}}</h5>
+            <p class="card-text">{{dataValues.description}}</p>
+            <p class="card-text">{{dataValues.time}}</p>
         <div class="text-right">
           <a href="#" class="btn btn-info">Delete</a>
           <a href="#" class="btn btn-primary">Edit</a>
         </div>
-      </div>
-    </div>
-{{/each}}
-{{/if}}
-{{#else}}
-<h2>No Posts</h2>
-{{/else}}
-</div> 
-<div class="row mt-4">
-      <div class="col-lg-6 offset-lg-3">
-          <h1>Events</h1>
-           {{#each events}}
-    <div class="card mt-3">
-      <img class="card-img-top" src="{{this.imgUrl}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{dataValues.title}}</h5>
-        <p class="card-text">{{dataValues.description}}</p>
-        <p> class="card-text">{{dataValues.time}}</p>
-        <div class="text-right">
-          <a href="#" class="btn btn-info">Delete</a>
-          <a href="#" class="btn btn-primary">View</a>
         </div>
-      </div>
+        </div>
+        </div>
+        {{/each}}
+        {{/if}}
+        {{#else}}
+        <h2>No Posts</h2>
+        {{/else}}
     </div>
-  {{/each}}
-      </div>
   </div>
+</div>
 
 <script src="/javascript/addtask.js"></script>
