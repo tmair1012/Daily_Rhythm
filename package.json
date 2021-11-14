@@ -4,6 +4,7 @@
   "description": "Hello",
   "main": "server.js",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "debug": "^4.3.2",
     "dotenv": "^10.0.0",
@@ -16,11 +17,14 @@
     "jaws": "^0.12.1",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.2",
     "nodemon": "^2.0.14",
     "sequelize": "^6.9.0",
-    "sessions": "0.0.2-7"
+    "session": "^0.1.0",
+    "sessions": "0.0.2-7",
+    "twilio": "^3.71.1"
   },
   "devDependencies": {},
   "scripts": {

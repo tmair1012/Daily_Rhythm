@@ -4,23 +4,37 @@
     <form>
         <div class="taskSection">
     <h2>Enter Task</h2>
-    <input type="text" name="Task-Name" placeholder="Enter Task Name" id="taskName">
+    <input type="text" name="title" placeholder="Enter Task Name" id="taskName">
     <p>Enter Description of Task</p>
-    <input type="text" name="Task-Name" id="TaskDescription" placeholder="Enter Task Description">
+    <input type="text" name="description" id="TaskDescription" placeholder="Enter Task Description">
     <p>Enter Phone Number</p>
-    <input type="text" name="Task-Name" id="PhoneNumber" placeholder="Enter PhoneNumber">
-    <p>Enter Time</p><input type="text" name="Task-Name" id="takeTime" placeholder="HH:MM:SS">
+    <input type="text" name="number" id="PhoneNumber" placeholder="Enter PhoneNumber">
+    <p>Enter Time</p><input type="text" name="time" id="takeTime" placeholder="HH:MM:SS">
     <p>Task Category</p>
     <select name="takeName" id="tasklist">
         <option value="personal">Personal</option>
         <option value="work">Work</option>
         <option value="activities">Activities</option>
       </select>
-     <button type="submit" id="addTaskBtn">Submit</button>
+     <button type="button" id="addTaskBtn">Submit</button>
     </div>
 </form>
+
+
 <div class="dashboardSection">
-<h2>Tasks</h2>
+    {{#if task.length}}
+    <h2>Your Tasks:</h2>
+{{#each task}}
+<h2>{{dataValues.title}}</h2>
+<p>{{dataValues.description}}</p>
+<p>{{dataValues.time}}</p>
+    <button type="submit" id='#delete-btn'>Delete</button>
+{{/each}}
+{{/if}}
+{{#else}}
+<h2>No Posts</h2>
+{{/else}}
 </div>
+
 
 <script src="/javascript/addtask.js"></script>

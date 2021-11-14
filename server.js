@@ -4,15 +4,15 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 const sequelize = require('./config/connection');
 const path = require('path');
-const fs = require('fs');
 
 const hbs = exphbs.create({});
 
+require('dotenv').config();
 
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

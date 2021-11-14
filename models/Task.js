@@ -13,12 +13,16 @@ Task.init(
     },
     title: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
     description: {
         type: DataTypes.STRING,
         allowNull: true
     },
+    time : {
+        type: DataTypes.STRING,
+        allowNull: true
+    }
 },
     {
         sequelize,

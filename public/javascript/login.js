@@ -15,7 +15,7 @@
       });
   
       if (response.ok) {
-        document.location.replace('/taskView');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }
@@ -29,7 +29,7 @@
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     const username = document.querySelector('#username-signup').value.trim();
-   console.log("USer",email,password,username)
+   console.log("User",email,password,username)
     if (email && password) {
       const response = await fetch('/api/users/signup', {
         method: 'post',
@@ -42,8 +42,8 @@
       });
   
       if (response.ok) {
-        console.log("USer created")
-        document.location.replace('/taskView/');
+        console.log("User created")
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }

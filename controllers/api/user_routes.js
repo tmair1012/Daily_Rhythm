@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const session = require('express-session');
 const { User } = require('../../models');
 
 //Get All users
@@ -41,13 +40,13 @@ router.post('/signup', (req, res) => {
     })
     .then(dbUser => {
         console.log("Signup",dbUser);
-        // req.session.save(() => {
-        //     req.session.id = dbUser.id,
-        //     req.session.username = dbUser.username,
+        // // req.session.save(() => {
+        // //     req.session.id = dbUser.id,
+        // //     req.session.username = dbUser.username,
         //     req.session.loggedIn = true;
-            
-        //});
-        res.json(dbUser);
+            res.json(dbUser);
+        // //});
+        
     })
     .catch(err => {
         console.log(err);
@@ -68,23 +67,23 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'No user with that email exists'});
             return;
         }
+        console.log(dbUser);
+        const okPass = dbUser.checkPassword(req.body.password);
 
-        // const okPass = dbUser.checkPassword(req.body.password);
+        if(!okPass) {
+            res.status(400).json({ message: 'incorrect Password!' })
+            return;
+        }
 
-        // if(!okPass) {
-        //     res.status(400).json({ message: 'incorrect Password!' })
-        //     return;
-        // }
+        req.session.save(() => {
+            req.session.user_id = dbUser.id
+            req.session.username = dbUser.username
+            req.session.loggedIn = true;
 
-        // req.session.save(() => {
-        //     req.session.user_id = dbUser.id
-        //     req.session.username = dbUser.username
-        //     req.session.loggedIn = true;
-
-            res.json({ user: dbUser, message: 'You are logged in' })
-        })
-    })
-
+            res.json({ user: dbUser, message: 'You are logged in' });
+        });
+    });
+});
 
 //Update User
 router.put('/:id', (req, res) => {
