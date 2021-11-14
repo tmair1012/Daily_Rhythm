@@ -1,5 +1,6 @@
 <header>
         <h1 class="page-header">Daily Rhythm</h1>
+        <div id='currentday'></div>
     </header>
     <form>
         <div class="taskSection">
@@ -21,6 +22,7 @@
 </form>
 
 
+
 <div class="dashboardSection">
     {{#if task.length}}
     <h2>Your Tasks:</h2>
@@ -38,3 +40,4 @@
 
 
 <script src="/javascript/addtask.js"></script>
+<script src="/javascript/sendsms.js"></script>

@@ -42,7 +42,8 @@
       });
   
       if (response.ok) {
-        console.log("User created")
+
+
         document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
