@@ -43,7 +43,7 @@
   
       if (response.ok) {
         console.log("USer created")
-        document.location.replace('/taskView/');
+        document.location.replace('/dashboard');
       } else {
         alert(response.statusText);
       }

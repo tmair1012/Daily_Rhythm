@@ -10,7 +10,12 @@ router.get('/', (req, res) => {
       //const tasks = taskData.map(task => task.get({ plain: true}));
       
       res.render('taskView', { task: taskData})
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   });
+  
 })
 
 

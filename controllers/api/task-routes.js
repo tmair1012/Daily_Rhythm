@@ -6,6 +6,10 @@ router.get('/', (req, res) => {
   console.log(taskData);
   const task = taskData
   res.render('taskView', { task })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 //get single task by id
