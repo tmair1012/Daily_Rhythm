@@ -18,7 +18,7 @@ await fetch('api/tasks/', {
 
 if (`${time}` === dateEl) {
 client.messages.create({
-    to: "+16307409575",
+    to: process.env.MY_PHONE_NUMBER,
     from: '+19285979465',
     body: `${description}`
 })
