@@ -25,16 +25,46 @@
     {{#if task.length}}
     <h2>Your Tasks:</h2>
 {{#each task}}
-<h2>{{dataValues.title}}</h2>
+{{!-- <h2>{{dataValues.title}}</h2>
 <p>{{dataValues.description}}</p>
 <p>{{dataValues.time}}</p>
-    <button type="submit" id='#delete-btn'>Delete</button>
+    <button type="submit" id='#delete-btn'>Delete</button> --}}
+    <div class="card mt-3">
+      
+      <div class="card-body">
+        <h5 class="card-title">{{dataValues.title}}</h5>
+        <p class="card-text">{{dataValues.description}}</p>
+        <p class="card-text">{{dataValues.time}}</p>
+        <div class="text-right">
+          <a href="#" class="btn btn-info">Delete</a>
+          <a href="#" class="btn btn-primary">Edit</a>
+        </div>
+      </div>
+    </div>
 {{/each}}
 {{/if}}
 {{#else}}
 <h2>No Posts</h2>
 {{/else}}
-</div>
-
+</div> 
+<div class="row mt-4">
+      <div class="col-lg-6 offset-lg-3">
+          <h1>Events</h1>
+           {{#each events}}
+    <div class="card mt-3">
+      <img class="card-img-top" src="{{this.imgUrl}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{dataValues.title}}</h5>
+        <p class="card-text">{{dataValues.description}}</p>
+        <p> class="card-text">{{dataValues.time}}</p>
+        <div class="text-right">
+          <a href="#" class="btn btn-info">Delete</a>
+          <a href="#" class="btn btn-primary">View</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+      </div>
+  </div>
 
 <script src="/javascript/addtask.js"></script>
