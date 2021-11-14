@@ -14,11 +14,11 @@
         headers: { 'Content-Type': 'application/json' }
       });
   
-      if (response.ok) {
+      // if (response.ok) {
         document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
-      }
+      // } else {
+      //   alert(response.statusText);
+      // }
     }
   }
   // eventually sign up
