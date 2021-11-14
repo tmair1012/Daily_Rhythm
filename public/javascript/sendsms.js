@@ -1,8 +1,6 @@
-const getDate = moment();
-    dateEl = getDate.format('MMMM Do YYYY, h:mm:ss a');
-    document.querySelector('#currentday').append(dateEl);
-    const accountSid = "ACf61dc874ddcb66a9a95a992265a48c0a"
-    const authToken = "98edd61b8d1e9399566b480a159a2c75"
+
+    const accountSid = process.env.TWILIO_ACCOUNT_SID
+    const authToken = process.env.TWILIO_AUTH_TOKEN
     console.log(accountSid);
     const client = require('twilio')(accountSid, authToken);
 console.log(dateEl);

@@ -40,12 +40,12 @@ router.post('/signup', (req, res) => {
     })
     .then(dbUser => {
         console.log("Signup",dbUser);
-        // // req.session.save(() => {
-        // //     req.session.id = dbUser.id,
-        // //     req.session.username = dbUser.username,
+        //  req.session.save(() => {
+        //      req.session.id = dbUser.id,
+        //     req.session.username = dbUser.username,
         //     req.session.loggedIn = true;
             res.json(dbUser);
-        // //});
+        // });
         
     })
     .catch(err => {
@@ -54,12 +54,13 @@ router.post('/signup', (req, res) => {
     });
 });
 
-//Create a new user
+
 router.post('/login', (req, res) => {
     console.log(req.body);
     User.findOne({
         where: {
-            email: req.body.email
+            email: req.body.email,
+            password: req.body.password
         }
     }).then(dbUser => {
         console.log(dbUser);
@@ -77,7 +78,8 @@ router.post('/login', (req, res) => {
 
         req.session.save(() => {
             req.session.user_id = dbUser.id
-            req.session.username = dbUser.username
+            req.session.email = dbUser.email
+            req.session.password = dbUser.password
             req.session.loggedIn = true;
 
             res.json({ user: dbUser, message: 'You are logged in' });

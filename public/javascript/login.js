@@ -14,14 +14,14 @@
         headers: { 'Content-Type': 'application/json' }
       });
   
-      if (response.ok) {
+     // if (response.ok) {
         document.location.replace('/dashboard');
-      } else {
-        alert(response.statusText);
-      }
+      // } else {
+      //   alert(response.statusText);
+      // }
     }
   }
-  // eventually sign up
+  // Sign up front end 
   
   async function signupFormHandler(event) {
     event.preventDefault();

@@ -6,9 +6,5 @@ router.get('/', (req, res) => {
     res.render('homepage');
   });
 
-// router.get('/taskView', (req, res) => {
-//   res.render('taskView');
-// })
-
 
 module.exports = router;
