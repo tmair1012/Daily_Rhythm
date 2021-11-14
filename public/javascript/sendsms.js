@@ -3,7 +3,7 @@
     const authToken = process.env.TWILIO_AUTH_TOKEN
     console.log(accountSid);
     const client = require('twilio')(accountSid, authToken);
-console.log(dateEl);
+
 
 async function sendText() {
 

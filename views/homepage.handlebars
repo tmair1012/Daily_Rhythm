@@ -1,12 +1,15 @@
 <!-- Log In Section -->
-<nav>
-  <div class="loginbox">
+<div class="d-flex justify-content-center">
+  <div class="row">
+    <div class="col-sm-4">
+      {{!-- <div class="loginbox"> --}}
+  <div class="flex-container">
     <h2>Login</h2>
     <form>
       <input
         type="text"
         name="username"
-        placeholder="Email"
+        placeholder="Username"
         class="username"
       />
       <input
@@ -22,11 +25,16 @@
       <br />
       <a href="/signup">Sign Up</a>
     </form>
+    </div>
+ 
   </div>
 </nav>
 <!-- Sign up Section -->
-<form class="signupbtn">
-  <div>
+{{!-- <form class="signupbtn"> --}}
+{{!-- <form class="flex-outer"> --}}
+  
+    <div class="col-sm-4">
+    <div>
     <h1>Sign Up</h1>
     <label for="username-signup"></label>
     <input type="text" id="username-signup" placeholder="Username" />

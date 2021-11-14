@@ -5,8 +5,8 @@ body {
     list-style: none;
     text-decoration: none;
 }
-
-header {
+/* 
+/* header {
     background-color: whitesmoke;
     margin: 0;
     padding: 0;
@@ -16,15 +16,15 @@ header {
     position: fixed;
     z-index: 99;
     
-}
+} */
 
-.page-header {
+/* .page-header {
     text-align: center;
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
-}
+} */
 
-.loginbox {
+/* .loginbox {
     width: 320px;
     height: 320px;
     background:whitesmoke;
@@ -37,9 +37,9 @@ header {
     border-radius: 5px;
     border: 1px solid black;
     font-family: 'Cabin', sans-serif;
-}
+} */
 
-.submitBtn {
+/* .submitBtn {
     background-color: #1877f2;
     margin: 10px;
     border: none;
@@ -48,35 +48,35 @@ header {
     line-height: 48px;
     padding: 0 16px;
     width: 250px;
-}
+} */
 
-.username {
+/* .username {
 width: 250px;
 font-size: 17px;
 border-radius: 3px;
 height: 30px;
 margin: 20px;
 border: 1px solid;
-}
+} */
 
-.password {
+/* .password {
     width: 250px;
     font-size: 17px;
     border-radius: 3px;
     height: 30px;
     border: 1px solid;
     margin-bottom: 40px;
-}
+} */
 
-.footer {
+/* .footer {
    position:absolute;
    bottom:0;
    width:100%;
    height:60px; 
    background:whitesmoke;
-}
+} */
 
-.links {
+/* .links {
     text-align: center;
     margin: 10px;
     word-spacing: 10px;
@@ -84,9 +84,9 @@ border: 1px solid;
     color: black;
     font-weight: bold;
     text-decoration: none;
-}
+} */
 
-.signupbtn {
+/* .signupbtn {
     width: 320px;
     height: 340px;
     background:whitesmoke;
@@ -99,9 +99,9 @@ border: 1px solid;
     border-radius: 5px;
     border: 1px solid black;
     font-family: 'Cabin', sans-serif;
-}
+} */
 
-#username-signup {
+/* #username-signup {
     width: 250px;
     font-size: 17px;
     border-radius: 3px;
@@ -109,26 +109,26 @@ border: 1px solid;
     margin: 20px;
     border: 1px solid;
     font-family: 'Cabin', sans-serif;
-}
+} */
 
-#email-signup {
+/* #email-signup {
     width: 250px;
     font-size: 17px;
     border-radius: 3px;
     height: 30px;
     margin: 5px;
     border: 1px solid;
-}
+} */
 
-#password-signup {
+/* #password-signup {
     width: 250px;
     font-size: 17px;
     border-radius: 3px;
     height: 30px;
     margin: 20px;
     border: 1px solid;
-}
-
+} */
+/* 
 #signUpbtn {
     background-color: #1877f2;
     margin: 0;
@@ -138,11 +138,11 @@ border: 1px solid;
     line-height: 48px;
     padding: 0 16px;
     width: 250px;  
-}
+} */
 
 /* Task Section */
 
-.taskSection {
+/* .taskSection {
     width: 320px;
     height: 400px;
     background:whitesmoke;
@@ -155,9 +155,9 @@ border: 1px solid;
     border-radius: 5px;
     border: 1px solid black;
     font-family: 'Cabin', sans-serif;
-}
+} */
 
-.dashboardSection {
+/* .dashboardSection {
     width: 600px;
     height: 390px;
     background:whitesmoke;
@@ -170,4 +170,6 @@ border: 1px solid;
     border-radius: 5px;
     border: 1px solid black;
     font-family: 'Cabin', sans-serif;
-}
+} */
+
+.classWithPad { margin:20px; padding:20px; } 
