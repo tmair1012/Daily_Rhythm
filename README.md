@@ -1,4 +1,5 @@
 ### Project-2: Daily Rhythm
+by students Tyler Mair, Alejandro Rosas Machado, Tory Roberg
 
 
 ## What does it do:
