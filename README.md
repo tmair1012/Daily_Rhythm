@@ -41,6 +41,13 @@ Each page features a navigation bar for easy access throughout the site.
 ![dailyrhythmfuturedev](https://user-images.githubusercontent.com/87789457/141704844-3460f6fc-747d-4345-b727-a2a64801234f.png)
 
 
+
+Twilio package working:
+![image](https://user-images.githubusercontent.com/87788050/141732195-5a45881c-b4d2-4841-9789-96092e9fd7ac.jpg)
+
+![image](https://user-images.githubusercontent.com/87788050/141732244-558b5bae-4cf2-430b-806f-e7acb8024020.jpg)
+
+
 Heroku Deployed: https://daily-rhythm.herokuapp.com/
 Github: https://github.com/tmair1012/Daily_Rhythm
 
