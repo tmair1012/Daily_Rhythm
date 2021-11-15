@@ -1,0 +1,23 @@
+<div class="d-flex flex-row">
+    <div class= "d-flex flex-column">
+       
+        <div class="classWithPad">
+            <h2>Current Title: {{task.title}}</h2>
+            <input type="text" name="edit-title" placeholder="New Task Name" id="editTitle">
+            <p>Current description {{dataValues.description}}</p>
+            <input type="text" name="edit-description" id="editDesc" placeholder="New Task Description">
+            <p>Current Number</p>
+            <input type="text" name="number" id="PhoneNumber" placeholder="Enter PhoneNumber">
+            <p>Current Time: {{dataValues.time}}</p><input type="text" name="time" id="editTime" placeholder="HH:MM:SS">
+            <p>Task Category</p>
+                <select name="takeName" id="tasklist">
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="activities">Activities</option>
+                </select>
+            <button type="button" id="edit-post">Submit</button>
+            </div>
+            
+        </div>
+    </div>
+    <script src="/javascript/editTask.js"></script>

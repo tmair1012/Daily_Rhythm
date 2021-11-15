@@ -29,8 +29,8 @@
             <p class="card-text">{{dataValues.description}}</p>
             <p class="card-text">{{dataValues.time}}</p>
         <div class="text-right">
-          <a href="#" class="btn btn-info">Delete</a>
-          <a href="#" class="btn btn-primary">Edit</a>
+          <button type="button" id="deletepost-btn">Delete Task</button>
+          <a href="/dashboard/edit/{{dataValues.id}}" id='editpost-btn' class="btn btn-primary">Edit</a>
         </div>
         </div>
         </div>
@@ -45,3 +45,4 @@
 </div>
 
 <script src="/javascript/addtask.js"></script>
+<script src="/javascript/delete-task.js"></script>
