@@ -6,7 +6,6 @@ router.get('/', (req, res) => {
     Task.findAll()
     .then((taskData) => {
       console.log('=====================');
-      console.log(taskData);
 
       res.render('taskView', { task: taskData})
       .catch((err) => {
@@ -45,3 +44,4 @@ router.get('/edit/:id', (req, res) => {
 });
 
 })
+

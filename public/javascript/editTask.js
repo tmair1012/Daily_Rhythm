@@ -7,7 +7,7 @@ async function editTask(event) {
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1]
     console.log(id);
-    const response = await fetch(`api/tasks/${id}`, {
+    const response = await fetch(`api/tasks/${id}` , {
         method: "PUT",
         body: JSON.stringify({
             edittitle,

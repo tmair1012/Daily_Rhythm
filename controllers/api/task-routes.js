@@ -2,10 +2,8 @@ const router = require("express").Router();
 const { Task } = require("../../models/");
 
 router.get('/', (req, res) => {
-  Task.findAll().then((taskData) => res.json(taskData));
-  console.log(taskData);
-  const task = taskData
-  res.render('taskView', { task })
+  Task.findAll()
+  .then((taskData) => res.json(taskData))
   .catch((err) => {
     console.log(err);
     res.status(500).json(err);
@@ -66,7 +64,7 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) =>{
   Task.destroy({
     where: {
-      id: req.params.id
+      id: req.body.id
     }
   })
   .then(taskData => {
