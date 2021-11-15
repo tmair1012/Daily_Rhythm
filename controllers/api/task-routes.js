@@ -44,6 +44,25 @@ router.post("/add", (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+  Task.update({
+    title: req.body.title,
+    description: req.body.description,
+    time: req.body.time
+  })
+  .then(editData => {
+    if (!editData) {
+      res.status(404).json({ message: 'No post found'});
+      return;
+    }
+    res.json(editData)
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 router.delete('/:id', (req, res) =>{
   Task.destroy({
     where: {
@@ -62,5 +81,6 @@ router.delete('/:id', (req, res) =>{
       res.status(500).json(err)
     });
 });
+
 
 module.exports = router;

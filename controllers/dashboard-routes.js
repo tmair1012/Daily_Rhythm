@@ -7,8 +7,7 @@ router.get('/', (req, res) => {
     .then((taskData) => {
       console.log('=====================');
       console.log(taskData);
-      //const tasks = taskData.map(task => task.get({ plain: true}));
-      
+
       res.render('taskView', { task: taskData})
       .catch((err) => {
         console.log(err);
@@ -29,3 +28,20 @@ router.post('/', (req, res) => {
     }
 })
 module.exports = router;
+
+
+router.get('/edit/:id', (req, res) => {
+  Task.findOne()
+  .then((taskData) => {
+    console.log('=====================');
+    console.log(taskData);
+
+    
+    res.render('editTask', { task: taskData})
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+})

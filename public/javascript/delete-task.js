@@ -1,7 +1,13 @@
+
+
 async function deleteTask(event) {
     event.preventDefault();
 
-    await fetch('/api/tasks/1', {
+    
+    
+    
+
+    await fetch(`/api/tasks/1`, {
         method: 'DELETE',
 
 
@@ -10,7 +16,7 @@ async function deleteTask(event) {
 }
 
 
-document.getElementById('#delete-btn')
+document.querySelector('#deletepost-btn')
   .addEventListener('click', deleteTask);
 
 
