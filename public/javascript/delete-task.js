@@ -1,18 +1,14 @@
-
-
-async function deleteTask(event) {
-    event.preventDefault();
-
+async function deleteTask() {
     
-    
-    
-
-    await fetch(`/api/tasks/1`, {
-        method: 'DELETE',
+    const id = window.location.toString().split('/')[
+      window.location.toString().split('/').length - 1]
+      console.log(id);
+await fetch(`/dashboard/edit/${id}`, {
+    method: 'DELETE',
 
 
     });
-    document.location.replace('/dashboard')
+    document.location.replace('/dashboard/')
 }
 
 
